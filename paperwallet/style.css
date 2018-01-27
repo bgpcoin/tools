@@ -1,7 +1,12 @@
 th, td, strong {
 	 color: #fff;
 	 text-shadow: gray 2px 2px;
- }
+	 font-size: 2em;
+}
+
+strong {
+ font-size: 4em;
+}
 
 body {
  background-repeat: repeat-y;
@@ -14,19 +19,25 @@ img {
 }
 
 td.address {
-  font-size: 75%;
+  font-size: 70%;
 }
 
 td.key {
   word-wrap: break-word;
-  font-size: 75%;
+  font-size: 70%;
 }
 
 td {
-  padding: 10px;
+  padding: 5px;
+page-break-inside: avoid;
 }
 
 th {
   color: #fff;
   text-align: left;
+page-break-inside: avoid;
+}
+
+table {
+page-break-inside: avoid;
 }
