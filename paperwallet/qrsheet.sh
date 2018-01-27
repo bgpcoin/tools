@@ -6,7 +6,7 @@ cat > $TMP/walletsheet.html <<EOF
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body style="background-image:url(internet.png)">
 <font color="#fff">
