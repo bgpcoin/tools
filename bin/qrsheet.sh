@@ -5,9 +5,9 @@ c=0
 cat > $TMP/walletsheet.html <<EOF
 <head>
 </head>
-<body>
+<body style="background-image:url(internet.png)">
 <table>
-<tr><th>Address</th><th>Private Key</th><th>Amount</th></tr>
+<tr><th>Address</th><th>Amount</th><th>Private Key</th></tr>
 EOF
 for addr in $(bgpcoind listunspent | grep address | cut -f4 -d\" | sort | uniq)
 do
@@ -18,8 +18,8 @@ do
 	qrencode -o $TMP/k${c}.png $key
 
 cat >> $TMP/walletsheet.html <<EOF
-<tr><td><img src="a${c}.png"></td><td><img src="k${c}.png"></td><td>$amount</td></tr>
-<tr><td><h6>$addr</h6></td><td><h6>$key</h6></td><td><ht>BGP<h1></td></tr>
+<tr><td><img src="a${c}.png"></td><td>$amount</td><td><img src="k${c}.png"></td></tr>
+<tr><td><h6>$addr</h6></td><td><h1>BGP</h1></td><td><h6>$key</h6></td></tr>
 EOF
 
 	c=$((c+1))
@@ -30,6 +30,7 @@ cat >> $TMP/walletsheet.html <<EOF
 </body>
 EOF
 
+rsync --progress -aH internet.png $TMP/
 rm -f $TMP/keys
 
 rsync -aH $TMP/. $HOME/.bgpcoin/paperwallet && rm -rf $TMP && echo "Generated $c wallets"
