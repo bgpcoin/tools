@@ -23,7 +23,7 @@ do
 
 cat >> $TMP/walletsheet.html <<EOF
 <tr><td><img src="a${c}.png"></td><td>$amount</td><td><img src="k${c}.png"></td></tr>
-<tr><td><h6>$addr</h6></td><td><h1>BGP</h1></td><td><h6>$key</h6></td></tr>
+<tr><td>$addr</td><td><strong>BGP<strongh></td><td>$key</td></tr>
 EOF
 
 	c=$((c+1))

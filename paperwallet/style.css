@@ -1,3 +1,11 @@
-.td {
-	color: #fff
+td, strong {
+ color: #fff;
+}
+.address .key {
+ word-wrap: break-word;
+}
+
+th {
+ color: #fff;
+ text-align: left;
 }
