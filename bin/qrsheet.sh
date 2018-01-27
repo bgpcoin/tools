@@ -13,7 +13,9 @@ for addr in $(bgpcoind listunspent | grep address | cut -f4 -d\" | sort | uniq)
 do
 	qrencode -s 10 -o $TMP/a${c}.png $addr
 	key=$(grep $addr $TMP/keys | awk '{print $1}')
-	amount=$(bgpcoind listunspent 6 9999999 [\"$addr\"] | grep amount | cut -f2 -d: | sed -s 's/,/<br\/>/' )
+	numbers=$(bgpcoind listunspent 6 9999999 [\"$addr\"] | grep amount | cut -f2 -d: | sed -s 's/,/+/' )
+	amount=$(echo ${numbers}-0 | bc)
+	echo $amount
 	qrencode -s 10 -o $TMP/k${c}.png $key
 
 cat >> $TMP/walletsheet.html <<EOF
