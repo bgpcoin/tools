@@ -6,6 +6,7 @@ cat > $TMP/walletsheet.html <<EOF
 <head>
 </head>
 <body style="background-image:url(internet.png)">
+<font color="#fff">
 <table>
 <tr><th>Address</th><th>Amount</th><th>Private Key</th></tr>
 EOF
