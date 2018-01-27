@@ -13,7 +13,7 @@ cat > $TMP/walletsheet.html <<EOF
 EOF
 for addr in $(bgpcoind listunspent | grep address | cut -f4 -d\" | sort | uniq)
 do
-cat >> $TMP/walletsheet.html
+cat >> $TMP/walletsheet.html <<EOF
 <tr><td>$c</td><th>Address</th><th>Amount</th><th>Private Key</th></tr>
 EOF
 	qrencode -o $TMP/a${c}.png $addr
