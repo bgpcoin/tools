@@ -10,7 +10,7 @@ cat > $TMP/walletsheet.html <<EOF
 </head>
 <body style="background-image:url(internet.jpg)">
 <table>
-<tr><th>Address</th><th>Amount</th><th>Private Key</th></tr>
+<tr><td></td><th>Address</th><th>Amount</th><th>Private Key</th></tr>
 EOF
 for addr in $(bgpcoind listunspent | grep address | cut -f4 -d\" | sort | uniq)
 do
@@ -21,8 +21,8 @@ do
 	qrencode -o $TMP/k${c}.png $key
 
 cat >> $TMP/walletsheet.html <<EOF
-<tr><td><img src="a${c}.png"></td><td><strong>$amount</strong><img src="bgp480.png"></td><td><img src="k${c}.png"></td></tr>
-<tr><td class="address">$addr</td><td><img src="bgp480.png"></td><td class="key">$key</td></tr>
+<tr><td>$c</td><td><img src="a${c}.png"></td><td><img src="bgp480.png"></td><td><img src="k${c}.png"></td></tr>
+<tr><td></td><td class="address">$addr</td><td>$amount</td><td class="key">$key</td></tr>
 EOF
 
 	c=$((c+1))
