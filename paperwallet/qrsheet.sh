@@ -3,7 +3,10 @@ TMP=`mktemp -d`
 bgpcoind dumpwallet $TMP/keys
 c=0
 cat > $TMP/walletsheet.html <<EOF
+<!DOCTYPE html>
+<html>
 <head>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body style="background-image:url(internet.png)">
 <font color="#fff">
@@ -29,6 +32,7 @@ done
 cat >> $TMP/walletsheet.html <<EOF
 </table>
 </body>
+</html>
 EOF
 
 rsync --progress -aH internet.png $TMP/
