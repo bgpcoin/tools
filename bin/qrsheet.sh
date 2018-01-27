@@ -15,12 +15,11 @@ do
 	key=$(grep $addr $TMP/keys | awk '{print $1}')
 	numbers=$(bgpcoind listunspent 6 9999999 [\"$addr\"] | grep amount | cut -f2 -d: | sed -s 's/,/+/' )
 	amount=$(echo ${numbers}-0 | bc)
-	echo $amount
 	qrencode -o $TMP/k${c}.png $key
 
 cat >> $TMP/walletsheet.html <<EOF
 <tr><td><img src="a${c}.png"></td><td><img src="k${c}.png"></td><td>$amount</td></tr>
-<tr><td>$addr</td><td>$key</td><td>$amount</td></tr>
+<tr><td><h6>$addr</h6></td><td><h6>$key</h6></td><td><ht>BGP<h1></td></tr>
 EOF
 
 	c=$((c+1))
