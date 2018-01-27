@@ -3,11 +3,30 @@ th, td, strong {
 	 text-shadow: gray 2px 2px;
  }
 
- td.address td.key {
-	  word-wrap: break-word;
-  }
+body {
+ background-repeat: repeat-y;
+}
 
-  th {
-	   color: #fff;
-	    text-align: left;
-    }
+img {
+ height: 224px;
+ width: 224px;
+
+}
+
+td.address {
+  font-size: 75%;
+}
+
+td.key {
+  word-wrap: break-word;
+  font-size: 75%;
+}
+
+td {
+  padding: 10px;
+}
+
+th {
+  color: #fff;
+  text-align: left;
+}
