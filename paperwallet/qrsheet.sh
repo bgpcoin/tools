@@ -35,7 +35,7 @@ cat >> $TMP/walletsheet.html <<EOF
 </html>
 EOF
 
-rsync --progress -aH internet.png $TMP/
+rsync --progress -aH internet.png style.css $TMP/
 rm -f $TMP/keys
 
 rsync -aH $TMP/. $HOME/.bgpcoin/paperwallet && rm -rf $TMP && echo "Generated $c wallets"
