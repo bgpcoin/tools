@@ -9,7 +9,6 @@ cat > $TMP/walletsheet.html <<EOF
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body style="background-image:url(internet.png)">
-<font color="#fff">
 <table>
 <tr><th>Address</th><th>Amount</th><th>Private Key</th></tr>
 EOF
@@ -23,7 +22,7 @@ do
 
 cat >> $TMP/walletsheet.html <<EOF
 <tr><td><img src="a${c}.png"></td><td>$amount</td><td><img src="k${c}.png"></td></tr>
-<tr><td>$addr</td><td><strong>BGP<strongh></td><td>$key</td></tr>
+<tr><td class="addr">$addr</td><td><strong>BGP<strongh></td><td class="key">$key</td></tr>
 EOF
 
 	c=$((c+1))
