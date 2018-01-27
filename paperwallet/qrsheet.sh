@@ -10,7 +10,7 @@ cat > $TMP/walletsheet.html <<EOF
 </head>
 <body style="background-image:url(internet.jpg)">
 EOF
-for addr in $(bgpcoind listunspent | grep address | cut -f4 -d\" | sort | uniq)
+for addr in $(bgpcoind listunspent 0 | grep address | cut -f4 -d\" | sort | uniq)
 do
 cat >> $TMP/walletsheet.html <<EOF
 <table>
