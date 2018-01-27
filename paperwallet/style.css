@@ -1,11 +1,13 @@
-td, strong {
- color: #fff;
-}
-.address .key {
- word-wrap: break-word;
-}
+th, td, strong {
+	 color: #fff;
+	 text-shadow: gray 2px 2px;
+ }
 
-th {
- color: #fff;
- text-align: left;
-}
+ td.address td.key {
+	  word-wrap: break-word;
+  }
+
+  th {
+	   color: #fff;
+	    text-align: left;
+    }

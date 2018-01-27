@@ -21,8 +21,8 @@ do
 	qrencode -o $TMP/k${c}.png $key
 
 cat >> $TMP/walletsheet.html <<EOF
-<tr><td><img src="a${c}.png"></td><td>$amount</td><td><img src="k${c}.png"></td></tr>
-<tr><td class="addr">$addr</td><td><strong>BGP<strongh></td><td class="key">$key</td></tr>
+<tr><td><img src="a${c}.png"></td><td><img src="bgp480.png"></td><td><img src="k${c}.png"></td></tr>
+<tr><td class="address">$addr</td><td><strong>$amount<strongh></td><td class="key">$key</td></tr>
 EOF
 
 	c=$((c+1))
@@ -34,7 +34,7 @@ cat >> $TMP/walletsheet.html <<EOF
 </html>
 EOF
 
-rsync --progress -aH internet.png style.css $TMP/
+rsync --progress -aH bgp480.png internet.png style.css $TMP/
 rm -f $TMP/keys
 
 rsync -aH $TMP/. $HOME/.bgpcoin/paperwallet && rm -rf $TMP && echo "Generated $c wallets"
